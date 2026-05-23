@@ -1,0 +1,24 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  skill:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Structure check
+        run: python scripts/check_structure.py .
+      - name: Privacy scan
+        run: python scripts/privacy_scan.py .
+      - name: Pressure tests
+        run: python scripts/run_pressure_tests.py .
+      - name: Skill quick validate
+        env:
+          PYTHONUTF8: "1"
+        run: python scripts/quick_validate_ci.py .

@@ -1,0 +1,7 @@
+interface:
+  display_name: "技之军团"
+  short_description: "科研向 Codex 技能军团总控"
+  brand_color: "#1D4ED8"
+  default_prompt: "Use $codex-skill-army to plan and coordinate a research-heavy task with the right skills."
+policy:
+  allow_implicit_invocation: true
