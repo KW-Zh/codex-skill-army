@@ -30,7 +30,8 @@ REQUIRED_CASES = {
 
 REQUIRED_DOCUMENT_TERMS = {
     "SKILL.md": ["总帅", "军师", "斥候", "主将", "副将", "监军", "军需官", "史官", "工部", "可见技能列表"],
-    "README.md": ["Research-first", "九角色军制", "动态点将", "与其他方式的区别"],
+    "README.md": ["Research-first", "九角色军制", "动态点将", "与其他方式的区别", "--path .", "--name codex-skill-army"],
+    "docs/quick-start.md": ["--path .", "--name codex-skill-army", "重启 Codex"],
     "references/maps/research-skill-routing.md": ["未来 skill 纳入规则", "防侵权边界", "Abaqus 热/耦合"],
     "references/protocols/historian-protocol.md": ["不默认保存", "AGENTMEMORY_INJECT_CONTEXT=false", "token", "写入前", "删除"],
     "references/protocols/recruitment-protocol.md": ["安全排除", "默认排除", "征召令"],

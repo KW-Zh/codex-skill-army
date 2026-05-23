@@ -2,7 +2,7 @@
 
 [![validate](https://github.com/KW-Zh/codex-skill-army/actions/workflows/validate.yml/badge.svg)](https://github.com/KW-Zh/codex-skill-army/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.1-blue.svg)](CHANGELOG.md)
 
 Research-first multi-agent orchestration protocol for OpenAI Codex skills.
 
@@ -50,7 +50,7 @@ Research-first multi-agent orchestration protocol for OpenAI Codex skills.
 从 GitHub 安装时，使用 Codex 的 skill installer 指向仓库根目录即可：
 
 ```powershell
-py -3 "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo KW-Zh/codex-skill-army --ref main --method download
+py -3 "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo KW-Zh/codex-skill-army --ref main --method download --path . --name codex-skill-army
 ```
 
 安装后重启 Codex，然后用下面的提示验证是否生效：

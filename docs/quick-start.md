@@ -3,7 +3,7 @@
 ## 1. 安装 skill
 
 ```powershell
-py -3 "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo KW-Zh/codex-skill-army --ref main --method download
+py -3 "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo KW-Zh/codex-skill-army --ref main --method download --path . --name codex-skill-army
 ```
 
 重启 Codex 后使用：

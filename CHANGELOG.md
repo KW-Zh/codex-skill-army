@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- 修正 GitHub 安装命令，补充根目录 skill 必需的 `--path . --name codex-skill-army` 参数。
+- 增加压力测试门禁，防止 README 和 quick start 再次遗漏安装路径参数。
+
 ## 0.2.0
 
 - 强化 README 首屏、九角色军制、动态点将和开源展示。
