@@ -3,6 +3,10 @@ name: validate
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   skill:
@@ -18,8 +22,13 @@ jobs:
         run: python scripts/privacy_scan.py .
       - name: Content audit
         run: python scripts/content_audit.py .
+      - name: Source audit
+        run: python scripts/source_audit.py .
       - name: Pressure tests
         run: python scripts/run_pressure_tests.py .
+      - name: Local install dry run
+        shell: pwsh
+        run: ./scripts/install-local.ps1 -CodexHome "$env:RUNNER_TEMP/codex-home" -WhatIf
       - name: Skill quick validate
         env:
           PYTHONUTF8: "1"

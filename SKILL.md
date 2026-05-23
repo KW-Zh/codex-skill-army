@@ -12,6 +12,8 @@ metadata:
 
 `codex-skill-army` 是一个单体总控 skill。它不替代领域 skill，而是用“军制”把用户本地已有和未来新增的 skills 组织起来：先轻量预检，再按任务需要点将、分兵、合围、验收。
 
+它像主帅一样运筹：先看当前会话可见的 skills metadata，再判断谁适合当主将、谁适合当副将、何时让斥候找新 skill、何时让监军收口。不要维护固定技能清单；未来安装的新 skill 只要出现在 Codex 可见技能列表中，就可以被纳入点将。
+
 目标用户偏科研方向：研究生、科研人员、论文写作者、科研代码维护者、仿真建模用户。简单问题直接回答，不因为本 skill 存在就制造流程。
 
 ## 轻量预检
@@ -53,6 +55,8 @@ metadata:
 - 史官：长期记忆系统，推荐 `agentmemory`；默认只保存用户确认的长期科研偏好和项目决策。
 - 工部：CodeGraph、MCP、CLI、安装器、自动化脚本等基础设施。
 
+科研场景中，监军和副将可进一步分出专项职责：引用官核验 DOI 和参考文献，数据官检查数据来源和脱敏，统计官检查模型与效应量，图表官检查图表和渲染，伦理合规官检查隐私、审稿材料和数据可用性。这些是职责分工，不是硬性新增 skill 依赖。
+
 需要角色边界时读取 `references/roles/role-taxonomy.md`。
 
 ## 科研优先规则
@@ -65,7 +69,7 @@ metadata:
 - 仿真建模：Abaqus/FEA 任务先选专用 Abaqus skill，再由监军检查建模假设、边界条件和结果提取。
 - 引用和事实：能核验就核验；不能核验时明确标注不确定性。
 
-科研流程模板见 `references/workflows/`。
+科研流程模板见 `references/workflows/`。需要把场景映射到主将、副将和监军检查时，读取 `references/maps/research-skill-routing.md`。
 
 ## 缺兵征召
 
@@ -101,6 +105,7 @@ metadata:
 完成前必须做与任务相称的验证：
 
 - Skill 本体：运行 `scripts/check_structure.py`、`scripts/privacy_scan.py`、`scripts/run_pressure_tests.py`，并用 Codex 的 `quick_validate.py` 校验。
+- 开源防侵权：运行 `scripts/content_audit.py` 和 `scripts/source_audit.py`，确认无本机临时话术、隐私痕迹或第三方 skill 大段复制。
 - 科研交付：检查引用、事实、格式、图表、公式、Word/PDF 渲染。
 - 代码交付：运行测试、构建、静态检查或最小复现场景。
 - 开源发布：检查许可证、README、安装说明、路径泄露和第三方来源。

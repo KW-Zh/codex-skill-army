@@ -26,6 +26,19 @@ BLOCKED_PHRASES = [
     "xbnlkjdxzkw",
     "@nwafu.edu.cn",
     "张凯文",
+    "TODO 发布",
+    "仅本机",
+    "维护者机器",
+    "replace me",
+    "Replace me",
+    "placeholder",
+    "debug only",
+    "默认直接覆盖",
+    "删除所有",
+    "默认上传",
+    "自动保存所有",
+    "保证通过",
+    "无需确认",
 ]
 
 

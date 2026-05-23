@@ -15,8 +15,16 @@ REQUIRED_FILES = [
     "SECURITY.md",
     "THIRD_PARTY_NOTICES.md",
     ".github/workflows/validate.yml",
+    ".github/pull_request_template.md",
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/skill_proposal.md",
+    ".github/ISSUE_TEMPLATE/workflow_example.md",
+    ".github/ISSUE_TEMPLATE/documentation_improvement.md",
     "agents/openai.yaml",
+    "docs/roadmap.md",
+    "docs/share-kit.md",
     "references/roles/role-taxonomy.md",
+    "references/maps/research-skill-routing.md",
     "references/protocols/orchestration-protocol.md",
     "references/protocols/recruitment-protocol.md",
     "references/protocols/historian-protocol.md",
@@ -35,6 +43,7 @@ REQUIRED_FILES = [
     "examples/historian.md",
     "tests/pressure_cases.json",
     "reports/agentmemory-audit-template.md",
+    "scripts/source_audit.py",
 ]
 
 ROLE_TERMS = ["总帅", "军师", "斥候", "主将", "副将", "监军", "军需官", "史官", "工部"]
@@ -80,6 +89,13 @@ def main() -> int:
     openai_yaml = root / "agents" / "openai.yaml"
     if openai_yaml.exists() and "$codex-skill-army" not in read_text(openai_yaml):
         errors.append("agents/openai.yaml default_prompt must contain $codex-skill-army")
+
+    readme = root / "README.md"
+    if readme.exists():
+        readme_text = read_text(readme)
+        for term in ["Research-first", "九角色军制", "动态点将", "source_audit.py"]:
+            if term not in readme_text:
+                errors.append(f"README.md is missing publish term: {term}")
 
     if errors:
         print("Structure check failed:")

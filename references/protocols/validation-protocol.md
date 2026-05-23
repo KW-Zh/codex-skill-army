@@ -7,7 +7,10 @@
 ```powershell
 py -3 .\scripts\check_structure.py .
 py -3 .\scripts\privacy_scan.py .
+py -3 .\scripts\content_audit.py .
+py -3 .\scripts\source_audit.py .
 py -3 .\scripts\run_pressure_tests.py .
+py -3 .\scripts\quick_validate_ci.py .
 py -3 -X utf8 "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\quick_validate.py" .
 ```
 
@@ -32,4 +35,6 @@ py -3 -X utf8 "$env:USERPROFILE\.codex\skills\.system\skill-creator\scripts\quic
 - 安装步骤可以复现。
 - 许可证和第三方来源清楚。
 - 无本机绝对路径、私密文件名、凭据。
+- 无维护者临时话术、个人邮箱或未证实能力承诺。
+- 无第三方 skill 大段复制；只保留抽象化调度规则和公开项目名称。
 - 示例覆盖主要目标用户。

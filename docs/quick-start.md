@@ -32,6 +32,8 @@ agentmemory
 .\scripts\install-local.ps1 -WhatIf
 py -3 .\scripts\check_structure.py .
 py -3 .\scripts\privacy_scan.py .
-py -3 .\scripts\run_pressure_tests.py .
 py -3 .\scripts\content_audit.py .
+py -3 .\scripts\source_audit.py .
+py -3 .\scripts\run_pressure_tests.py .
+py -3 .\scripts\quick_validate_ci.py .
 ```
