@@ -6,8 +6,6 @@
 py -3 "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo KW-Zh/codex-skill-army --ref main --method download
 ```
 
-如果 `KW-Zh` 不是你的 GitHub 用户名，发布前把命令替换为真实 `OWNER/codex-skill-army`。
-
 重启 Codex 后使用：
 
 ```text
@@ -35,4 +33,5 @@ agentmemory
 py -3 .\scripts\check_structure.py .
 py -3 .\scripts\privacy_scan.py .
 py -3 .\scripts\run_pressure_tests.py .
+py -3 .\scripts\content_audit.py .
 ```

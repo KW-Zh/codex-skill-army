@@ -24,8 +24,6 @@
 py -3 "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" --repo KW-Zh/codex-skill-army --ref main --method download
 ```
 
-如果 `KW-Zh` 不是你的 GitHub 用户名，发布前把命令替换为真实 `OWNER/codex-skill-army`。
-
 安装后重启 Codex，然后用下面的提示验证是否生效：
 
 ```text
